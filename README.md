@@ -33,7 +33,7 @@ Keep away from unnecessary dependecies, keep it simple.
 
 ## Todo:
 
-<ul>
+<ol>
   <li>Create page with list of products.
     <ul>
       <li>Fetch list of products.</li>
@@ -43,7 +43,7 @@ Keep away from unnecessary dependecies, keep it simple.
     </ul>
   </li>
 
-  <li>Add posibility to sort products by **categories** and price by **desc** or **asc**.</li>
+  <li>Add posibility to sort products by <b>categories</b> and price by <b>desc</b> or <b>asc</b>.</li>
 
   <li>Create page with list of added products.
     <ul>
@@ -52,7 +52,7 @@ Keep away from unnecessary dependecies, keep it simple.
       <li>Add possibility to remove added product.</li>
     </ul>
   </li>
-</ul>
+</ol>
 
 ## Examples:
 
