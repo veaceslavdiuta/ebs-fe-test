@@ -33,16 +33,26 @@ Keep away from unnecessary dependecies, keep it simple.
 
 ## Todo:
 
-1. Create page with list of products.
-   **1.1. Fetch list of products.
-   **1.2. Show all the products in a table.
-   **1.3. Add possibility to add in cart.
-   **1.4. Add possibility to remove from cart directly in list of products table.
-2. Add posibility to sort products by **categories** and price by **desc** or **asc**.
-3. Create page with list of added products.
-   **3.1. Show all the added products in a table.
-   **3.2. Add possibility to change quantity of added products.
-   \_\_3.3. Add possibility to remove added product.
+<ul>
+  <li>Create page with list of products.
+    <ul>
+      <li>Fetch list of products.</li>
+      <li>Show all the products in a table.</li>
+      <li>Add possibility to add in cart.</li>
+      <li>Add possibility to remove from cart directly in list of products table.</li>
+    </ul>
+  </li>
+
+  <li>Add posibility to sort products by **categories** and price by **desc** or **asc**.</li>
+
+  <li>Create page with list of added products.
+    <ul>
+      <li>Show all the added products in a table.</li>
+      <li>Add possibility to change quantity of added products.</li>
+      <li>Add possibility to remove added product.</li>
+    </ul>
+  </li>
+</ul>
 
 ## Examples:
 
