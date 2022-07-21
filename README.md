@@ -43,13 +43,14 @@ Keep away from unnecessary dependecies, keep it simple.
     </ul>
   </li>
 
-  <li>Add posibility to sort products by <b>categories</b> and price by <b>desc</b> or <b>asc</b>.</li>
+  <li>Add posibility to filter products by <b>categories</b> and sort price by <b>desc</b> or <b>asc</b>.</li>
 
   <li>Create page with list of added products.
     <ul>
       <li>Show all the added products in a table.</li>
       <li>Add possibility to change quantity of added products.</li>
       <li>Add possibility to remove added product.</li>
+       <li>Show total price for all added products</li>
     </ul>
   </li>
 </ol>
