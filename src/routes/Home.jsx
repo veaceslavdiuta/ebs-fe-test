@@ -3,28 +3,19 @@ import ProductCard from '../components/ProductCard';
 import FilterAndSort from '../components/FilterAndSort';
 import { useSearchParams } from 'react-router-dom';
 
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  category: string;
-  image: string;
-}
-
 function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [error, setError] = useState<string>('');
-  const [selectedFilter, setSelectedFilter] = useState<string>('All');
-  const [selectedSorting, setSelectedSorting] = useState<string>('sort by');
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [error, setError] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState('All');
+  const [selectedSorting, setSelectedSorting] = useState('sort by');
   const [searchParams] = useSearchParams();
   const searchValue = searchParams.get('search');
 
   const fetchProducts = async () => {
     try {
       const response = await fetch('https://fakestoreapi.com/products');
-      const data: Product[] = await response.json();
+      const data = await response.json();
       setProducts(data);
       setFilteredProducts(data);
     } catch (error) {

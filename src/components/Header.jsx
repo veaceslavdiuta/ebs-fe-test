@@ -1,13 +1,14 @@
-import { FormEvent, useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 function Header() {
-  const [inputValue, setInputValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState('');
   const navigate = useNavigate();
-  console.log(inputValue);
+  const { cartCount } = useContext(CartContext);
 
-  function handleSearch(event: FormEvent<HTMLFormElement>) {
+  function handleSearch(event) {
     event.preventDefault();
     if (inputValue.trim() === '') return null;
     navigate(`?search=${inputValue}`);
@@ -35,7 +36,12 @@ function Header() {
           />
         </form>
 
-        <FaShoppingCart className="h-6 w-6 text-gray-700 sm:order-3" />
+        <Link to={'/cart'} className="relative sm:order-3">
+          <div className="absolute right-[-10px] top-[-10px] flex h-5 w-5 items-center justify-center rounded-full bg-slate-800 text-sm text-white">
+            {cartCount}
+          </div>
+          <FaShoppingCart className="h-7 w-7 text-gray-700" />
+        </Link>
       </div>
     </header>
   );
