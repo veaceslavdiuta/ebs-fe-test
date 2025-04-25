@@ -4,12 +4,8 @@ import { MdOutlineClose } from 'react-icons/md';
 import { CartContext } from '../contexts/CartContext';
 
 function CartProduct(props) {
-  const {
-    removeProductFromCart,
-    increaseProductQuantity,
-    decreaseProductQuantity,
-    addProductToCart,
-  } = useContext(CartContext);
+  const { removeProductFromCart, decreaseProductQuantity, addProductToCart } =
+    useContext(CartContext);
 
   return (
     <>

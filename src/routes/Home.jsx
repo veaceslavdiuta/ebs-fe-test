@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import FilterAndSort from '../components/FilterAndSort';
 import { useSearchParams } from 'react-router-dom';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -11,15 +12,20 @@ function Home() {
   const [selectedSorting, setSelectedSorting] = useState('sort by');
   const [searchParams] = useSearchParams();
   const searchValue = searchParams.get('search');
+  const [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     try {
+      setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
       const data = await response.json();
+      await new Promise((resolve) => setTimeout(resolve, 3000));
       setProducts(data);
       setFilteredProducts(data);
     } catch (error) {
       setError('Failed to fetch products. Please try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,13 +72,17 @@ function Home() {
         />
 
         {error ? (
-          <p className="text-red-500">{error}</p>
+          <p className="text-center text-red-500">{error}</p>
         ) : (
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {filteredProducts.length === 0 ? (
-              <p className="place-self-center text-red-400">
-                No products found!
-              </p>
+            {loading ? (
+              <div className="col-span-full flex items-center justify-center py-20">
+                <LoadingSpinner />
+              </div>
+            ) : filteredProducts.length === 0 ? (
+              <div className="col-span-full flex items-center justify-center py-20">
+                <p className="text-red-400">No products found!</p>
+              </div>
             ) : (
               filteredProducts.map((product) => (
                 <ProductCard product={product} key={product.id} />
