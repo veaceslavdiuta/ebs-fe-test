@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import Snackbar from './Snackbar';
+import { Link } from 'react-router-dom';
 
 function ProductCard(props) {
   const { addProductToCart } = useContext(CartContext);
@@ -20,11 +21,13 @@ function ProductCard(props) {
 
   return (
     <div className="flex flex-col items-center justify-between gap-6 rounded-xl bg-stone-200 p-2 sm:p-4">
-      <img
-        className="h-40 w-full object-contain mix-blend-multiply"
-        src={props.product.image}
-        alt={props.product.title}
-      />
+      <Link to={`/${props.product.id}`}>
+        <img
+          className="h-40 w-full object-contain mix-blend-multiply"
+          src={props.product.image}
+          alt={props.product.title}
+        />
+      </Link>
       <div className="flex w-full flex-col items-center gap-4">
         <h3 className="line-clamp-1 text-center sm:line-clamp-2">
           {props.product.title}

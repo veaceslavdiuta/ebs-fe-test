@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header className="bg-slate-100">
-      <div className="container mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-9 px-4 py-5 xl:px-0">
+      <div className="container mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-8 px-4 py-5 xl:px-0">
         <Link to="/">
           <img className="w-32" src="/src/assets/Logo.png" alt="Logo" />
         </Link>

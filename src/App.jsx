@@ -3,6 +3,7 @@ import Home from './routes/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Cart from './routes/Cart';
+import ProductDetails from './routes/ProductDetails';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" Component={Home} />
         <Route path="/cart" Component={Cart} />
+        <Route path="/:id" Component={ProductDetails} />
       </Routes>
 
       <Footer />
